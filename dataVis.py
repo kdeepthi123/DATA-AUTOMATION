@@ -14,6 +14,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 # Load credentials from Streamlit secrets
 service_account_info = st.secrets["google_drive"]
 credentials = Credentials.from_service_account_info(service_account_info)
+client = gspread.authorize(credentials)
 
 # 🔹 Streamlit App Title
 st.title("📊 Swiggy Data Visualization Dashboard")
