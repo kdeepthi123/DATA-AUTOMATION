@@ -7,7 +7,14 @@ import plotly.express as px
 # 🔹 Google Sheets Authentication
 SERVICE_ACCOUNT_FILE = "credentials.json"  # Replace with your service account JSON file
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+#credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+#client = gspread.authorize(credentials)
+
+# Load Google Credentials from Streamlit Secrets
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["google_drive"]
+)
+
 client = gspread.authorize(credentials)
 
 # 🔹 Streamlit App Title
