@@ -6,7 +6,7 @@ import plotly.express as px
 
 # 🔹 Google Sheets Authentication
 SERVICE_ACCOUNT_FILE = "credentials.json"  # Replace with your service account JSON file
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 #credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 #client = gspread.authorize(credentials)
 
